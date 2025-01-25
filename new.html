@@ -13,11 +13,12 @@
             padding: 0;
         }
         .container {
-            margin-top: 50px;
+            margin-top: 20px;
             position: relative;
         }
         .flag-girl {
-            width: 250px;
+            width: 80%;
+            max-width: 250px;
             animation: floatGirl 3s infinite alternate ease-in-out;
         }
         @keyframes floatGirl {
@@ -25,7 +26,7 @@
             to { transform: translateY(-20px); }
         }
         .text {
-            font-size: 50px;
+            font-size: 30px;
             font-weight: bold;
             color: #000;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
@@ -38,9 +39,9 @@
             to { opacity: 1; }
         }
         .btn, .share-btn, .music-btn, .safety-btn, .security-btn {
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 20px;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
             color: white;
             border: none;
             border-radius: 30px;
@@ -58,7 +59,7 @@
         .security-btn { background-color: #0000FF; }
         .security-btn:hover { background-color: #1E90FF; }
         .footer {
-            margin-top: 50px;
+            margin-top: 30px;
             font-size: 18px;
             color: #000;
         }
@@ -71,7 +72,7 @@
             border-radius: 20px;
             display: none;
             text-align: left;
-            max-width: 800px;
+            max-width: 90%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -79,7 +80,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="image.jpg" alt="Republic Day fuchar stik city" class="flag-girl">
+        <img src="image.jpg" alt="Republic Day celebration" class="flag-girl">
         <div class="text">
             <span>Happy</span> Republic <span>Day</span> 🇮🇳
         </div>
@@ -124,7 +125,6 @@
             window.open(url, "_blank");
         }
 
-        // Background music controls
         var music = document.getElementById("bgMusic");
 
         function toggleMusic() {
@@ -148,7 +148,6 @@
             window.location.href = "https://www.youtube.com/@GitHubGuru";  // Replace with your actual GitHub Guru channel URL
         }
 
-        // Autoplay music after user interaction
         document.addEventListener('click', function() {
             music.play();
         }, { once: true });
