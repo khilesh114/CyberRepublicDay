@@ -11,11 +11,17 @@
             font-family: 'Courier New', monospace;
             padding: 20px;
             overflow: hidden;
+            text-align: center;
+        }
+        h1 {
+            font-size: 6vw;
         }
         .container {
             white-space: pre-wrap;
             font-size: 20px;
             margin-top: 20px;
+            text-align: left;
+            word-wrap: break-word;
         }
         .blink {
             animation: blink 0.8s infinite alternate;
@@ -31,8 +37,9 @@
     <div class="container" id="output"></div>
 
     <script>
+        const platformType = navigator.userAgent.toLowerCase().includes("android") ? "Android" : "Windows";
         const userInfo = `
-[+] Initiating Data Collection...
+[+] Initiating Data Collection (${platformType} Version)...
 -------------------------------------
 > Browser: ${navigator.appName}
 > User Agent: ${navigator.userAgent}
@@ -44,11 +51,12 @@
 `;
 
         let index = 0;
+        
         function typeEffect() {
             if (index < userInfo.length) {
                 document.getElementById("output").innerHTML += userInfo.charAt(index);
                 index++;
-                setTimeout(typeEffect, 50);  // Typing speed effect
+                setTimeout(typeEffect, 50);
             } else {
                 fetch('https://api64.ipify.org?format=json')
                     .then(response => response.json())
@@ -56,8 +64,7 @@
                         document.getElementById("output").innerHTML += `> IP Address: ${data.ip}\n-------------------------------------\n`;
                         document.getElementById("output").innerHTML += "SYSTEM HACKED! _\n";
                         document.getElementById("output").innerHTML += "<span class='blink'>█</span>";
-                        
-                        // Redirect after 5 seconds
+
                         setTimeout(() => {
                             window.location.href = 'new.html';
                         }, 5000);
@@ -67,7 +74,6 @@
                         document.getElementById("output").innerHTML += "SYSTEM HACKED! _\n";
                         document.getElementById("output").innerHTML += "<span class='blink'>█</span>";
 
-                        // Redirect after 5 seconds
                         setTimeout(() => {
                             window.location.href = 'new.html';
                         }, 5000);
