@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Republic Day - Stay Safe Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #FF9933, #FFFFFF, #138808);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            position: relative;
+        }
+        .flag-girl {
+            width: 250px;
+            animation: floatGirl 3s infinite alternate ease-in-out;
+        }
+        @keyframes floatGirl {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+        .text {
+            font-size: 50px;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeIn 3s ease-in-out;
+        }
+        .text span { color: #FF9933; }
+        .text span:nth-child(2) { color: #138808; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .btn, .share-btn, .music-btn, .safety-btn, .security-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn { background-color: #138808; }
+        .btn:hover { background-color: #FF9933; }
+        .share-btn { background-color: #25D366; }
+        .share-btn:hover { background-color: #128C7E; }
+        .music-btn { background-color: #FF9933; }
+        .music-btn:hover { background-color: #138808; }
+        .safety-btn { background-color: #000; }
+        .safety-btn:hover { background-color: #FF0000; }
+        .security-btn { background-color: #0000FF; }
+        .security-btn:hover { background-color: #1E90FF; }
+        .footer {
+            margin-top: 50px;
+            font-size: 18px;
+            color: #000;
+        }
+        .safety-tips {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            border-radius: 20px;
+            display: none;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="image.jpg" alt="Republic Day fuchar stik city" class="flag-girl">
+        <div class="text">
+            <span>Happy</span> Republic <span>Day</span> 🇮🇳
+        </div>
+        <button class="btn" onclick="celebrate()">Celebrate Now</button>
+        <button class="share-btn" onclick="shareWhatsApp()">Share on WhatsApp</button>
+        <button class="music-btn" onclick="toggleMusic()">Play/Pause Music</button>
+        <button class="safety-btn" onclick="showSafetyTips()">Cyber Safety Tips</button>
+        <button class="security-btn" onclick="goToGitHubGuru()">Learn More on GitHub Guru</button>
+        <div class="footer">Proud to be an Indian! Jai Hind! 🇮🇳</div>
+
+        <div class="safety-tips" id="safetyTips">
+            <h2>💻 कैसे बचें हैकिंग से? ⚠️</h2>
+            <ul>
+                <li>1. मजबूत पासवर्ड का उपयोग करें और नियमित रूप से बदलें।</li>
+                <li>2. अज्ञात लिंक पर क्लिक न करें, विशेष रूप से ईमेल या सोशल मीडिया पर।</li>
+                <li>3. अपने सिस्टम और एंटीवायरस को अपडेट रखें।</li>
+                <li>4. दो-चरणीय सत्यापन (2FA) का उपयोग करें।</li>
+                <li>5. सार्वजनिक Wi-Fi नेटवर्क से बचें या VPN का उपयोग करें।</li>
+                <li>6. फिशिंग हमलों से सतर्क रहें, अनजान अनुरोधों को अस्वीकार करें।</li>
+                <li>7. अपने सोशल मीडिया सेटिंग्स को सुरक्षित रखें।</li>
+                <li>8. अपने डेटा का नियमित बैकअप लें।</li>
+                <li>9. कोई भी व्यक्तिगत जानकारी साझा करने से पहले सोचें।</li>
+                <li>10. सुरक्षित वेबसाइट (HTTPS) का ही उपयोग करें।</li>
+            </ul>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function celebrate() {
+            alert("Wishing you a very Happy Republic Day! 🇮🇳");
+            document.body.style.background = "linear-gradient(to bottom, #FF9933, #138808, #FFFFFF)";
+        }
+
+        function shareWhatsApp() {
+            const message = "Happy Republic Day! Let's celebrate the pride of our nation together. 🇮🇳 Jai Hind!";
+            const url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
+
+        // Background music controls
+        var music = document.getElementById("bgMusic");
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+
+        function showSafetyTips() {
+            var tips = document.getElementById("safetyTips");
+            if (tips.style.display === "none") {
+                tips.style.display = "block";
+            } else {
+                tips.style.display = "none";
+            }
+        }
+
+        function goToGitHubGuru() {
+            window.location.href = "https://www.youtube.com/@GitHubGuru";  // Replace with your actual GitHub Guru channel URL
+        }
+
+        // Autoplay music after user interaction
+        document.addEventListener('click', function() {
+            music.play();
+        }, { once: true });
+    </script>
+</body>
+</html>
